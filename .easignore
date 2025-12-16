@@ -1,0 +1,28 @@
+# EAS Build Ignore (Git Root)
+# If EAS CLI is determining context from git root, we need to ignore from here.
+
+# Ignore the huge ServerGo folder entirely (unless you need it for build script context?)
+# Assuming purely frontend build:
+ServerGo/
+
+# App native folders (regenerated)
+App/android/
+App/ios/
+
+# App dependencies
+App/node_modules/
+
+# App build artifacts
+App/dist/
+App/web-build/
+App/coverage/
+
+# App Expo config
+App/.expo/
+
+# Standard ignores
+.DS_Store
+*.jks
+*.keystore
+*.p12
+credentials.json

@@ -1,0 +1,31 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@game/*": [
+        "./features/game/*"
+      ],
+      "@settings/*": [
+        "./features/settings/*"
+      ],
+      "@board-recognition/*": [
+        "./features/board-recognition/*"
+      ],
+      "@analysis/*": [
+        "./features/analysis/*"
+      ]
+    },
+    "jsx": "react-native"
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
+}

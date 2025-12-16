@@ -1,0 +1,39 @@
+# Go Analysis Server Dependencies
+# ================================
+
+# Web Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Async Support
+asyncio-throttle>=1.0.2
+
+# Configuration
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+
+# SGF Parsing
+chardet>=5.2.0
+
+# Image Processing (Board Recognition)
+opencv-python>=4.8.0
+numpy>=1.24.0,<2.0.0
+python-multipart>=0.0.6
+
+# Machine Learning (VisualGo)
+torch>=2.0.0
+torchvision>=0.15.0
+scikit-image>=0.23.0
+imutils>=0.5.4
+scipy>=1.10.0
+
+# Testing (dev)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+hypothesis>=6.0.0
+httpx>=0.25.0
+
+# Linting (dev)
+ruff>=0.1.0
+mypy>=1.6.0

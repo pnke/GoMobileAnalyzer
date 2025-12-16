@@ -1,0 +1,27 @@
+FROM python:3.11-slim-bookworm
+
+# Install system dependencies required for OpenCV and build tools
+RUN apt-get update --fix-missing && apt-get install -y \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy requirements
+COPY requirements.txt .
+
+# Install dependencies
+# Note: We use opencv-python-headless for server environments to avoid GUI deps
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir pytest httpx opencv-python-headless
+
+# Copy source code
+COPY . .
+
+# Set python path
+ENV PYTHONPATH=/app
+
+# Default command to run tests
+CMD ["pytest", "-v"]

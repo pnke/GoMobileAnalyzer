@@ -1,0 +1,11 @@
+[runpod]
+handlerFile = "handler.py"
+
+[runpod.baseImage]
+image = "runpod/pytorch:2.2.0-py3.10-cuda12.1.1-devel-ubuntu22.04"
+
+[runpod.env]
+PYTHONUNBUFFERED = "1"
+# KATAGO_API_KEY should be set via RunPod Secrets or environment variables
+# See: https://docs.runpod.io/pods/configuration/secrets
+# Do NOT commit actual API keys to version control

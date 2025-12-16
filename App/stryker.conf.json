@@ -1,0 +1,20 @@
+{
+    "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+    "_comment": "This config was generated using a preset. Please see the handbook for more information: https://stryker-mutator.io/docs/stryker-js/guides/react-native",
+    "mutate": [
+        "features/game/gameReducer.ts",
+        "lib/sgf.ts"
+    ],
+    "testRunner": "jest",
+    "jest": {
+        "projectType": "custom",
+        "configFile": "jest.config.js"
+    },
+    "reporters": [
+        "progress",
+        "clear-text",
+        "html"
+    ],
+    "coverageAnalysis": "off",
+    "ignoreStatic": false
+}

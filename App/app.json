@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "GoAnalysisApp",
+    "slug": "GoAnalysisApp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "goanalysisapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#2D333B"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.pnk23.GoAnalysisApp"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#2D333B"
+        }
+      ],
+      "expo-localization",
+      "expo-secure-store",
+      "@config-plugins/detox"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "4dbf4d96-529b-4665-a769-1e9efa0b3cfc"
+      }
+    }
+  }
+}

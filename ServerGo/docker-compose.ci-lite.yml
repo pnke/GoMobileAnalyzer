@@ -1,0 +1,40 @@
+# Lightweight CI Docker Compose
+# Runs API tests without GPU or KataGo (mocked)
+# Used by GitHub Actions for smoke testing
+
+services:
+  # FastAPI server with mocked KataGo
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      - DEV=true
+      - LOG_LEVEL=INFO
+      - KATAGO_PATH= # Empty = KataGo disabled
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+
+  # Test runner container
+  test-runner:
+    image: python:3.11-slim
+    depends_on:
+      api:
+        condition: service_healthy
+    working_dir: /app
+    volumes:
+      - ./tests:/app/tests
+      - ./conftest.py:/app/conftest.py
+    environment:
+      - API_URL=http://api:8000
+    command: >
+      bash -c "
+        pip install -q pytest httpx &&
+        python -m pytest tests/test_api_endpoints.py -v --tb=short
+      "

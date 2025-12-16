@@ -1,0 +1,2 @@
+logFile = /dev/stdout
+analysisThreads = 8

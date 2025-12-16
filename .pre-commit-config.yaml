@@ -1,0 +1,38 @@
+# Pre-commit configuration for GoRemoteAnalyse
+# Install: pip install pre-commit && pre-commit install
+# Run all: pre-commit run --all-files
+
+repos:
+  # Python linting and formatting with Ruff
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.1
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+        files: ^ServerGo/
+      - id: ruff-format
+        files: ^ServerGo/
+
+  # TypeScript/JavaScript linting
+  - repo: local
+    hooks:
+      - id: eslint
+        name: ESLint
+        entry: npm run lint --prefix App --
+        language: system
+        files: ^App/.*\.(ts|tsx|js|jsx)$
+        pass_filenames: false
+
+  # General file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^(App/node_modules/|ServerGo/ml/)
+      - id: end-of-file-fixer
+        exclude: ^(App/node_modules/|ServerGo/ml/)
+      - id: check-yaml
+      - id: check-json
+        exclude: ^App/node_modules/
+      - id: check-added-large-files
+        args: ['--maxkb=1000']

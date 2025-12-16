@@ -1,0 +1,20 @@
+# Ruff configuration for ServerGo
+# https://docs.astral.sh/ruff/configuration/
+
+[lint]
+# Enable common lint rules
+select = ["E", "F", "W"]
+
+# Ignore specific rules
+ignore = [
+    "E501",  # Line too long (handled by formatter)
+]
+
+# Exclude third-party and generated code
+exclude = [
+    "go-analysis-backend-python/src/katawrap/*",
+    "go-analysis-backend-python/src/katrain/*",
+    "__pycache__",
+    ".git",
+    "venv",
+]

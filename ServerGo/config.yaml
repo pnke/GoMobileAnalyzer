@@ -1,0 +1,6 @@
+tunnel: 3621f9e1-cc98-4284-8883-9519f6608f8f
+credentials-file: C:\Users\paulk\.cloudflared\3621f9e1-cc98-4284-8883-9519f6608f8f.json
+ingress:
+  - hostname: api.paulkischkat.com
+    service: http://localhost:8000
+  - service: http_status:404

@@ -1,0 +1,19 @@
+__pycache__
+.pytest_cache
+.venv
+venv
+.git
+.gitignore
+*.pyc
+analysis_logs
+katago-v1.16.3-cuda12.1-cudnn8.9.7-windows-x64
+go-analysis-backend-python - Copy
+go-analysis-backend-python
+
+# ML Data exclusions
+ml/data
+ml/VisualGo
+ml/viusalgo_dataset
+ml/gomrade_dataset
+ml/checkpoints
+ml/__pycache__
