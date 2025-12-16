@@ -9,7 +9,9 @@
 
 <p align="center">
   <a href="https://github.com/pnke/GoMobileAnalyzer/actions/workflows/cy.yml"><img src="https://github.com/pnke/GoMobileAnalyzer/actions/workflows/cy.yml/badge.svg" alt="CI"></a>
-  <a href="https://codecov.io/gh/pnke/GoMobileAnalyzer"><img src="https://codecov.io/gh/pnke/GoMobileAnalyzer/branch/main/graph/badge.svg" alt="codecov"></a>
+  <<a href="https://codecov.io/gh/pnke/GoMobileAnalyzer" > 
+ <img src="https://codecov.io/gh/pnke/GoMobileAnalyzer/graph/badge.svg?token=TADGP86U0V"/> 
+ </a>
 </p>
 
 ---
